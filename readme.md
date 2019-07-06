@@ -6,6 +6,8 @@ This source code is not a ready to work. You have to modify things and implement
 It is made for testing but you can use it for any purpose under MIT license.
 
 ## Installation
+It is required at least PHP 7.0
+
 Import the **.sql** file into your database, change configuration in **config.php** file.
 
 ## Begin testing
