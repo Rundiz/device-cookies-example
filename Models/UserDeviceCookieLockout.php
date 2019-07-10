@@ -66,11 +66,13 @@ class UserDeviceCookieLockout extends BaseModel
         unset($field, $sql, $value, $where);
         $this->Sth->execute();
 
-        if ($this->Sth->rowCount() >= 1) {
+        $result = $this->Sth->fetchAll();
+        if (is_array($result) && count($result) >= 1) {
             $useInsert = false;
         } else {
             $useInsert = true;
         }
+        unset($result);
 
         // if not exists use insert, otherwise use update.
         if (isset($useInsert) && $useInsert === true) {
@@ -175,11 +177,14 @@ class UserDeviceCookieLockout extends BaseModel
         unset($field, $sql, $value, $where);
         $this->Sth->execute();
 
-        if ($this->Sth->rowCount() >= 1) {
+        $result = $this->Sth->fetchAll();
+        if (is_array($result) && count($result) >= 1) {
             // if found in lockout list
-            $this->lockoutResult = $this->Sth->fetchAll();
+            $this->lockoutResult = $result;
+            unset($result);
             return true;
         } else {
+            unset($result);
             return false;
         }
     }// isInLockoutList

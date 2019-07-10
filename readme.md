@@ -2,7 +2,7 @@
 
 This is an example source code for device cookies in **PHP** from the OWASP document "**[Slow Down Online Guessing Attacks with Device Cookies][1]**".
 
-This source code is not a ready to work. You have to modify things and implement to match yours code & DB.<br>
+This source code is not a ready to work. You have to modify things and implement to match yourscode & DB.<br>
 It is made for testing but you can use it for any purpose under MIT license.
 
 ## Installation
@@ -11,7 +11,7 @@ It is required at least PHP 7.0
 Import the **.sql** file into your database, change configuration in **config.php** file.
 
 ## Begin testing
-Browse to **form.php** page and enter login credentials such as email: **admin@localhost** and password: **pass**. It should displaying that you had logged in successfully.
+Browse to **form.php** page and enter email: **admin@localhost** and password: **pass**. It should be displaying that you had logged in successfully.
 
 Try again with wrong password until you get lockout.<br>
 For more test and information please continue reading on the OWASP page.

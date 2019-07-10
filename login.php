@@ -134,9 +134,6 @@ if ($_POST) {
 
     unset($formValidated);
 
-    // disconnect PDO.
-    unset($dbh);
-
     // display output message. ---------------------------------
     if (isset($output) && is_scalar($output)) {
         // if there is output message.
@@ -144,3 +141,7 @@ if ($_POST) {
     }
     // end display output message. ----------------------------
 }
+
+
+// disconnect PDO.
+unset($dbh);
