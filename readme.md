@@ -2,7 +2,7 @@
 
 This is an example source code for device cookies in **PHP** from the OWASP document "**[Slow Down Online Guessing Attacks with Device Cookies][1]**".
 
-This source code is not a ready to work. You have to modify things and implement to match yourscode & DB.<br>
+This source code is not a ready to work. You have to modify things and implement to match your code & DB.<br>
 It is made for testing but you can use it for any purpose under MIT license.
 
 ## Installation
