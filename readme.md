@@ -26,7 +26,7 @@ For checking that generated keys is in the length you want.<br>
 [link 1][chlen1], [link 2][chlen2], [link 3][chlen3]
 
 
-[1]: https://www.owasp.org/index.php/Slow_Down_Online_Guessing_Attacks_with_Device_Cookies
+[1]: https://owasp.org/www-community/Slow_Down_Online_Guessing_Attacks_with_Device_Cookies
 [gk1]: http://www.unit-conversion.info/texttools/random-string-generator/
 [gk2]: https://passwordsgenerator.net/
 [gk3]: https://keygen.io/ 
