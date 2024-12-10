@@ -207,6 +207,9 @@ class DeviceCookies
         if (is_null($cookieValue)) {
             $cookieValue = $this->getDeviceCookie();
         }
+        if (!is_string($cookieValue)) {
+            throw new \InvalidArgumentException('The argument `$cookieValue` must be string or null.');
+        }
         $exploded = explode(',', $cookieValue);
 
         if (is_array($exploded) && count($exploded) >= 3) {
@@ -243,6 +246,7 @@ class DeviceCookies
      * Get reject message and merge with some data you specified.
      *
      * @param array $result The lockout result got from `$UserDeviceCookieLockout->getLockoutResult()` method.
+     * @param string|null $message The reject message.
      * @return string Return formatted message.
      */
     public function getRejectMessage(array $result, $message = null): string
@@ -265,6 +269,10 @@ class DeviceCookies
 
         if ($message === null || empty($message)) {
             $message = 'Unable to login until %s, please try again later.';
+        }
+
+        if (!is_string($message)) {
+            throw new \InvalidArgumentException('The argument `$message` must be string or null.');
         }
 
         return sprintf($message, $row->lockout_until);
@@ -413,7 +421,7 @@ class DeviceCookies
                         $signature
                     )
                 ) {
-                    // 2. Validate that SIGNATURE == HMAC(secret-key, â€œLOGIN,NONCEâ€?)
+                    // 2. Validate that SIGNATURE == HMAC(secret-key, "LOGIN,NONCE")
                     if ($login === $userLogin) {
                         // 3. Validate that LOGIN represents the user who is actually trying to authenticate
                         return true;

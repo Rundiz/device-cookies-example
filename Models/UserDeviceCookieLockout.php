@@ -121,12 +121,19 @@ class UserDeviceCookieLockout extends BaseModel
      * If device cookie content is specified, then it will check for specific device cookie.<br>
      * If device cookie is `null` then it will check for untrusted clients.
      *
-     * @param string $deviceCookie The device cookie content.
-     * @param int $user_id The user id. For checking from untrusted clients.
+     * @param string|null $deviceCookie The device cookie content.
+     * @param int|null $user_id The user id. For checking from untrusted clients.
      * @return bool Return `true` if current user is in the lockout list, return `false` for otherwise.
      */
     public function isInLockoutList($deviceCookie = null, $user_id = null): bool
     {
+        if (!is_string($deviceCookie) && !is_null($deviceCookie)) {
+            throw new \InvalidArgumentException('The argument `$deviceCookie` must be string or null.');
+        }
+        if (!is_int($user_id) && !is_null($user_id)) {
+            throw new \InvalidArgumentException('The argument `$user_id` must be integer or null.');
+        }
+
         $sql = 'SELECT `user_id`, `devicecookie_nonce`, `devicecookie_signature`, `lockout_untrusted_clients`, `lockout_until` FROM `' . $this->tableName . '` WHERE `lockout_until` >= NOW()';
         $where = [];
 
