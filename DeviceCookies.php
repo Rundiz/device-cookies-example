@@ -202,7 +202,7 @@ class DeviceCookies
      * @param string|null The cookie value. Leave null to get it from cookie variable.
      *@return array Return array where 0 is login, 1 is nonce, 2 is signature.
      */
-    public function getDeviceCookieArray(string $cookieValue = null): array
+    public function getDeviceCookieArray($cookieValue = null): array
     {
         if (is_null($cookieValue)) {
             $cookieValue = $this->getDeviceCookie();
@@ -245,7 +245,7 @@ class DeviceCookies
      * @param array $result The lockout result got from `$UserDeviceCookieLockout->getLockoutResult()` method.
      * @return string Return formatted message.
      */
-    public function getRejectMessage(array $result, string $message = null): string
+    public function getRejectMessage(array $result, $message = null): string
     {
         if (empty($result)) {
             if (empty($message)) {
@@ -413,7 +413,7 @@ class DeviceCookies
                         $signature
                     )
                 ) {
-                    // 2. Validate that SIGNATURE == HMAC(secret-key, “LOGIN,NONCE”)
+                    // 2. Validate that SIGNATURE == HMAC(secret-key, “LOGIN,NONCE�?)
                     if ($login === $userLogin) {
                         // 3. Validate that LOGIN represents the user who is actually trying to authenticate
                         return true;

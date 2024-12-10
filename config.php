@@ -26,7 +26,7 @@ $deviceCookieExpire = 730;// The number of days that this cookie will be expired
  *
  * @link https://www.php.net/manual/en/pdo.construct.php Document.
  */
-$pdoDbName = 'dev_devicecookies';
+$pdoDbName = 'test_device_cookies';
 $pdoDbHost = 'localhost';
 $pdoUser = 'user';
 $pdoPassword = 'pass';

@@ -125,7 +125,7 @@ class UserDeviceCookieLockout extends BaseModel
      * @param int $user_id The user id. For checking from untrusted clients.
      * @return bool Return `true` if current user is in the lockout list, return `false` for otherwise.
      */
-    public function isInLockoutList(string $deviceCookie = null, int $user_id = null): bool
+    public function isInLockoutList($deviceCookie = null, $user_id = null): bool
     {
         $sql = 'SELECT `user_id`, `devicecookie_nonce`, `devicecookie_signature`, `lockout_untrusted_clients`, `lockout_until` FROM `' . $this->tableName . '` WHERE `lockout_until` >= NOW()';
         $where = [];
