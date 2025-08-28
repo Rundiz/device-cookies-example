@@ -5,6 +5,8 @@ This is an example source code for device cookies in **PHP** from the OWASP docu
 This source code is not a ready to work. You have to modify things and implement to match your code & DB.<br>
 It is made for testing but you can use it for any purpose under MIT license.
 
+Tested up to PHP 8.4.
+
 ## Installation
 It is required at least PHP 7.0
 
